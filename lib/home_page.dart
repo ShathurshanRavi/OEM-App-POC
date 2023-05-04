@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:oem_app_poc/common/local_variable_widgets/custom_button.dart';
 
-import 'package:oem_app_poc/common/variable_list/alignment_variable.dart';
-import 'package:oem_app_poc/common/variable_list/color_variable.dart';
-import 'package:oem_app_poc/common/variable_list/size_variable.dart';
-import 'package:oem_app_poc/common/variable_list/text_variable.dart';
-import 'package:oem_app_poc/common/widgets/bottom_text_container.dart';
-import 'package:oem_app_poc/common/widgets/common_text_field.dart';
-import 'package:oem_app_poc/common/widgets/custom_button.dart';
-import 'package:oem_app_poc/common/widgets/logo_container.dart';
-import 'package:oem_app_poc/common/widgets/title_container.dart';
-
+import 'package:oem_app_poc/ui/json_variable_ui.dart';
+import 'package:oem_app_poc/ui/local_variable_ui.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -19,77 +12,40 @@ class HomePageScreen extends StatefulWidget {
 }
 
 class _HomePageScreenState extends State<HomePageScreen> {
+  void localScreenNavigation() {
+    Navigator.of(context).pushNamed(LocalVariableListScreen.routeName);
+  }
+
+  void jsonScreenNavigation() {
+    Navigator.of(context).pushNamed(JsonVariableListScreen.routeName);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AsiriColorVariableList().pageBackroundColor,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: AsiriAlignmentVariableList().pagePadding,
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    LogoContainer(
-                      url: AsiriTextVaribleList().logoUrl,
-                      margin: AsiriAlignmentVariableList().logoMargin,
-                      height: AsiriAlignmentVariableList().logoHeight,
-                      width: AsiriAlignmentVariableList().logoWidth,
-                    ),
-                    TitleContainer(
-                      title: AsiriTextVaribleList().title,
-                      fontSize: AsiriSizeVariableList().titleFontSize,
-                      textColor: AsiriColorVariableList().titleTextColor,
-                      height: AsiriAlignmentVariableList().titleContainerHeight,
-                      width: AsiriAlignmentVariableList().titleContainerWidth,
-                    ),
-                  ],
-                ),
-                Container(
-                  margin: AsiriAlignmentVariableList().lableContainerMargin,
-                  height: AsiriAlignmentVariableList().lableContainerHeight,
-                  width: double.infinity,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CommonTextField(
-                        labelText: AsiriTextVaribleList().labelText1,
-                        fontSize: AsiriSizeVariableList().lableTextFontSize,
-                        textColor: AsiriColorVariableList().lableTextColor,
-                      ),
-                      CommonTextField(
-                        labelText: AsiriTextVaribleList().labelText2,
-                        fontSize: AsiriSizeVariableList().lableTextFontSize,
-                        textColor: AsiriColorVariableList().lableTextColor,
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  height:
-                      AsiriAlignmentVariableList().bottomTextContainerHeight,
-                  width: double.infinity,
-                  margin: AsiriAlignmentVariableList().lableContainerMargin,
-                  child: CustomButton(
-                    text: AsiriTextVaribleList().buttonText,
-                    buttonBackroundColor:
-                        AsiriColorVariableList().buttonBackroundColor,
-                    fontSize: AsiriSizeVariableList().buttonTextFontSize,
-                    textColor: AsiriColorVariableList().buttonTextColor,
-                  ),
-                ),
-                BottomTextContainer(
-                  height:
-                      AsiriAlignmentVariableList().bottomTextContainerHeight,
-                  bottomText: AsiriTextVaribleList().bottomText,
-                  fontSize: AsiriSizeVariableList().bottomTextFontSize,
-                  textColor: AsiriColorVariableList().bottomTextFontColor,
-                  margin:
-                      AsiriAlignmentVariableList().bottomTextContainerMargin,
-                ),
-              ],
-            ),
+      body: Padding(
+        padding: const EdgeInsets.only(
+          top: 50.0,
+          bottom: 50.0,
+          left: 30.0,
+          right: 30.0,
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CustomButton(
+                text: "Approach 1",
+                onClick: localScreenNavigation,
+                buttonBackroundColor: Colors.blue,
+              ),
+              CustomButton(
+                text: "Approach 2",
+                onClick: jsonScreenNavigation,
+                buttonBackroundColor: Colors.blue,
+              ),
+            ],
           ),
         ),
       ),

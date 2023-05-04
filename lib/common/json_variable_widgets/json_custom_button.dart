@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatefulWidget {
+class JsonCustomButton extends StatefulWidget {
   final String? text;
   final Color? textColor;
   final FontWeight? fontWeight;
   final double? fontSize;
   final Color? buttonBackroundColor;
-  final Function? onClick;
-  const CustomButton({
+  final Function()? onClick;
+  const JsonCustomButton({
     super.key,
     required this.text,
     this.fontSize,
@@ -18,17 +18,17 @@ class CustomButton extends StatefulWidget {
   });
 
   @override
-  State<CustomButton> createState() => _CustomButtonState();
+  State<JsonCustomButton> createState() => _JsonCustomButtonState();
 }
 
-class _CustomButtonState extends State<CustomButton> {
+class _JsonCustomButtonState extends State<JsonCustomButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: widget.buttonBackroundColor ?? Colors.amber,
       ),
-      onPressed: () => widget.onClick,
+      onPressed: widget.onClick ?? () {},
       child: Text(
         widget.text ?? "",
         style: TextStyle(
