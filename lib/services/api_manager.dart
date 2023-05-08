@@ -1,10 +1,12 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:oem_app_poc/common/api/api_string.dart';
+import 'package:oem_app_poc/common/custom_snack_bar.dart';
 import 'package:oem_app_poc/models/asiri_config_model.dart';
 
 class ApiManager {
-  Future<AsiriConfigs?> getConfigs() async {
+  Future<AsiriConfigs?> getConfigs(BuildContext context) async {
     AsiriConfigs? configModel;
     http.Response response;
 
@@ -16,7 +18,7 @@ class ApiManager {
         configModel = AsiriConfigs.fromJson(jsonMap);
       }
     } catch (e) {
-      print(e.toString());
+      showSnackBarToScreen(e.toString());
     }
     return configModel;
   }

@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:oem_app_poc/common/color_convert.dart';
 import 'package:oem_app_poc/common/json_variable_widgets/json_bottom_text_container.dart';
 import 'package:oem_app_poc/common/json_variable_widgets/json_common_text_field.dart';
 import 'package:oem_app_poc/common/json_variable_widgets/json_custom_button.dart';
@@ -16,7 +18,7 @@ class JsonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: AsiriColorVariableList().pageBackroundColor,
+      backgroundColor: HexColor.fromHex(configVariables?.pageBackroundColor),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -39,7 +41,8 @@ class JsonScreen extends StatelessWidget {
                     JsonTitleContainer(
                       title: configVariables?.title,
                       fontSize: configVariables?.titleFontSize,
-                      // textColor: AsiriColorVariableList().titleTextColor,
+                      textColor:
+                          HexColor.fromHex(configVariables?.titleTextColor),
                       height: configVariables?.titleContainerHeight,
                       width: configVariables?.titleContainerWidth0,
                     ),
@@ -57,12 +60,14 @@ class JsonScreen extends StatelessWidget {
                       JsonCommonTextField(
                         labelText: configVariables?.labelText1,
                         fontSize: configVariables?.lableTextFontSize,
-                        // textColor: AsiriColorVariableList().lableTextColor,
+                        textColor:
+                            HexColor.fromHex(configVariables?.lableTextColor),
                       ),
                       JsonCommonTextField(
                         labelText: configVariables?.labelText2,
                         fontSize: configVariables?.lableTextFontSize,
-                        // textColor: AsiriColorVariableList().lableTextColor,
+                        textColor:
+                            HexColor.fromHex(configVariables?.lableTextColor),
                       ),
                     ],
                   ),
@@ -75,17 +80,19 @@ class JsonScreen extends StatelessWidget {
                   ),
                   child: JsonCustomButton(
                     text: configVariables?.buttonText,
-                    // buttonBackroundColor:
-                    //     AsiriColorVariableList().buttonBackroundColor,
+                    buttonBackroundColor:
+                        HexColor.fromHex(configVariables?.buttonBackroundColor),
                     fontSize: configVariables?.buttonTextFontSize,
-                    // textColor: AsiriColorVariableList().buttonTextColor,
+                    textColor:
+                        HexColor.fromHex(configVariables?.buttonTextColor),
                   ),
                 ),
                 JsonBottomTextContainer(
                   height: configVariables?.bottomTextContainerHeight,
                   bottomText: configVariables?.bottomText,
                   fontSize: configVariables?.bottomTextFontSize,
-                  // textColor: AsiriColorVariableList().bottomTextFontColor,
+                  textColor:
+                      HexColor.fromHex(configVariables?.bottomTextFontColor),
                   marginBottom:
                       configVariables?.bottomTextContainerMarginBottom,
                 ),

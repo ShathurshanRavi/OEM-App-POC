@@ -18,14 +18,14 @@ class _JsonVariableListScreenState extends State<JsonVariableListScreen> {
   @override
   void initState() {
     super.initState();
-    ApiManager().getConfigs();
+    ApiManager().getConfigs(context);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder<AsiriConfigs?>(
-        future: ApiManager().getConfigs(),
+        future: ApiManager().getConfigs(context),
         builder: (context, AsyncSnapshot<AsiriConfigs?> snapshot) {
           AsiriConfigs? configs = snapshot.data;
           if (snapshot.connectionState == ConnectionState.waiting) {
