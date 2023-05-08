@@ -17,7 +17,29 @@ class _HomePageScreenState extends State<HomePageScreen> {
   }
 
   void jsonScreenNavigation() {
-    Navigator.of(context).pushNamed(JsonVariableListScreen.routeName);
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return const JsonVariableListScreen(
+            isApproach2: true,
+          );
+        },
+      ),
+    );
+  }
+
+  void hybridScreenNavigation() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return const JsonVariableListScreen(
+            isApproach2: false,
+          );
+        },
+      ),
+    );
   }
 
   @override
@@ -49,6 +71,15 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 width: double.infinity,
                 child: CustomButton(
                   text: "Approach 2",
+                  onClick: jsonScreenNavigation,
+                  buttonBackroundColor: Colors.blue,
+                ),
+              ),
+              SizedBox(
+                height: 70,
+                width: double.infinity,
+                child: CustomButton(
+                  text: "Approach 3",
                   onClick: jsonScreenNavigation,
                   buttonBackroundColor: Colors.blue,
                 ),

@@ -28,7 +28,10 @@ class LogoContainer extends StatelessWidget {
           const EdgeInsets.only(
             right: 20.0,
           ),
-      child: Image.asset(url ?? ""),
+      child: Image.network(
+        url ?? "",
+        fit: BoxFit.fill,
+      ),
     );
   }
 }

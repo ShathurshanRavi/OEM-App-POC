@@ -7,7 +7,6 @@ class AsiriAlignmentVariableList {
     right: 20.0,
     bottom: 8.0,
   );
-
   final EdgeInsets logoMargin = const EdgeInsets.only(
     right: 20.0,
   );
@@ -15,26 +14,25 @@ class AsiriAlignmentVariableList {
   final EdgeInsets lableContainerMargin = const EdgeInsets.only(
     top: 50.0,
   );
-
   final EdgeInsets buttonMargin = const EdgeInsets.only(
     bottom: 20.0,
   );
-
   final EdgeInsets bottomTextContainerMargin = const EdgeInsets.only(
     bottom: 20.0,
   );
-
-
   final double logoHeight = 90;
   final double logoWidth = 150;
-
   final double titleContainerHeight = 100;
   final double titleContainerWidth = 150;
-
   final double lableContainerHeight = 200;
-
   final double buttonContainerHeight = 80;
-
-  final double bottomTextContainerHeight = 80;
-
+  final double bottomTextContainerHeight = 200;
+  final double bottomTextContainerMarginBottom = 20.0;
+  final double logoMarginRight = 20.0;
+  final double pagePaddingLeft = 20.0;
+  final double pagePaddingRight = 20.0;
+  final double pagePaddingTop = 8.0;
+  final double pagePaddingBottom = 8.0;
+  final double lableContainerMarginTop = 20.0;
+  final double buttonMarginBottom = 20.0;
 }

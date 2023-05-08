@@ -1,6 +1,6 @@
 class AsiriTextVaribleList {
   final String logoUrl =
-      "assets/images/asiri_logo.jpg";
+      "https://www.asirihealth.com/templates/assets/images/home-new/asiri-helath-logo.png";
   final String title = "Asiri Hospital";
   final String labelText1 = "Name";
   final String labelText2 = "Age";
@@ -9,6 +9,5 @@ class AsiriTextVaribleList {
 }
 
 class LankaTextVariableList {
-  final String logoUrl =
-      "assets/images/lanka_logo.jpg";
+  final String logoUrl = "assets/images/lanka_logo.jpg";
 }

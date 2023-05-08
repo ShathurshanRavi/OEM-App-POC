@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:oem_app_poc/models/asiri_config_model.dart';
 import 'package:oem_app_poc/services/api_manager.dart';
+import 'package:oem_app_poc/ui/hybrid_variable_screen.dart';
 import 'package:oem_app_poc/ui/json_variable_screen.dart';
 
 class JsonVariableListScreen extends StatefulWidget {
   static const routeName = '/approach2';
+  final bool? isApproach2;
 
   const JsonVariableListScreen({
+    this.isApproach2,
     super.key,
   });
 
@@ -40,9 +43,13 @@ class _JsonVariableListScreenState extends State<JsonVariableListScreen> {
               ),
             );
           } else {
-            return JsonScreen(
-              configVariables: configs,
-            );
+            return (widget.isApproach2 ?? true)
+                ? JsonScreen(
+                    configVariables: configs,
+                  )
+                : HybridScreen(
+                    configVariables: configs,
+                  );
           }
         },
       ),
