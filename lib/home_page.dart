@@ -25,25 +25,33 @@ class _HomePageScreenState extends State<HomePageScreen> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(
-          top: 50.0,
-          bottom: 50.0,
+          top: 250.0,
+          bottom: 250.0,
           left: 30.0,
           right: 30.0,
         ),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CustomButton(
-                text: "Approach 1",
-                onClick: localScreenNavigation,
-                buttonBackroundColor: Colors.blue,
+              SizedBox(
+                height: 70,
+                width: double.infinity,
+                child: CustomButton(
+                  text: "Approach 1",
+                  onClick: localScreenNavigation,
+                  buttonBackroundColor: Colors.blue,
+                ),
               ),
-              CustomButton(
-                text: "Approach 2",
-                onClick: jsonScreenNavigation,
-                buttonBackroundColor: Colors.blue,
+              SizedBox(
+                height: 70,
+                width: double.infinity,
+                child: CustomButton(
+                  text: "Approach 2",
+                  onClick: jsonScreenNavigation,
+                  buttonBackroundColor: Colors.blue,
+                ),
               ),
             ],
           ),
