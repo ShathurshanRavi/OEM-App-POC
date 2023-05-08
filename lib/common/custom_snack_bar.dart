@@ -7,6 +7,5 @@ SnackBar showSnackBarToScreen(String? content) {
       milliseconds: 300,
     ),
   );
-
   return snackBar;
 }

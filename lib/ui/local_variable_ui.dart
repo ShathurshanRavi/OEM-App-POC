@@ -62,7 +62,7 @@ class LocalVariableListScreen extends StatelessWidget {
                 ),
                 Container(
                   height:
-                      AsiriAlignmentVariableList().bottomTextContainerHeight,
+                      AsiriAlignmentVariableList().buttonContainerHeight,
                   width: double.infinity,
                   margin: AsiriAlignmentVariableList().lableContainerMargin,
                   child: CustomButton(
