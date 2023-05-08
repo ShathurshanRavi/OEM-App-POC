@@ -80,7 +80,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 width: double.infinity,
                 child: CustomButton(
                   text: "Approach 3",
-                  onClick: jsonScreenNavigation,
+                  onClick: hybridScreenNavigation,
                   buttonBackroundColor: Colors.blue,
                 ),
               ),
