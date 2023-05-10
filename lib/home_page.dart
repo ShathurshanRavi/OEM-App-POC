@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oem_app_poc/common/local_variable_widgets/custom_button.dart';
 
 import 'package:oem_app_poc/ui/json_variable_ui.dart';
@@ -46,11 +47,11 @@ class _HomePageScreenState extends State<HomePageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(
-          top: 250.0,
-          bottom: 250.0,
-          left: 30.0,
-          right: 30.0,
+        padding: EdgeInsets.only(
+          top: ScreenUtil().setHeight(250.0),
+          bottom: ScreenUtil().setHeight(250.0),
+          left: ScreenUtil().setWidth(30.0),
+          right: ScreenUtil().setWidth(30.0),
         ),
         child: Center(
           child: Column(
@@ -58,7 +59,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 70,
+                height: ScreenUtil().setHeight(70),
                 width: double.infinity,
                 child: CustomButton(
                   text: "Approach 1",
@@ -67,7 +68,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 ),
               ),
               SizedBox(
-                height: 70,
+                height: ScreenUtil().setHeight(70),
                 width: double.infinity,
                 child: CustomButton(
                   text: "Approach 2",
@@ -76,7 +77,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 ),
               ),
               SizedBox(
-                height: 70,
+                height: ScreenUtil().setHeight(70),
                 width: double.infinity,
                 child: CustomButton(
                   text: "Approach 3",

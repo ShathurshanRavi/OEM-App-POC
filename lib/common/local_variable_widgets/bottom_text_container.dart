@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomTextContainer extends StatelessWidget {
   final String? bottomText;
@@ -22,11 +23,11 @@ class BottomTextContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? 200,
+      height: ScreenUtil().setHeight(height ?? 200),
       width: width ?? double.infinity,
       margin: margin ??
-          const EdgeInsets.only(
-            bottom: 20.0,
+          EdgeInsets.only(
+            bottom: ScreenUtil().setWidth(20),
           ),
       child: Center(
         child: Text(
@@ -34,7 +35,7 @@ class BottomTextContainer extends StatelessWidget {
           style: TextStyle(
             color: textColor ?? Colors.black,
             fontWeight: fontWeight ?? FontWeight.w400,
-            fontSize: fontSize ?? 18,
+            fontSize: ScreenUtil().setSp(fontSize ?? 18),
             overflow: TextOverflow.ellipsis,
           ),
         ),

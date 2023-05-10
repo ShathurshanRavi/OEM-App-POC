@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatefulWidget {
   final String? text;
@@ -34,7 +35,7 @@ class _CustomButtonState extends State<CustomButton> {
         style: TextStyle(
           color: widget.textColor ?? Colors.white,
           fontWeight: widget.fontWeight ?? FontWeight.w400,
-          fontSize: widget.fontSize ?? 14,
+          fontSize: ScreenUtil().setSp(widget.fontSize ?? 14),
           overflow: TextOverflow.ellipsis,
         ),
       ),

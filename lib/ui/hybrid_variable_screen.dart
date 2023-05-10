@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:oem_app_poc/common/color_convert.dart';
-import 'package:oem_app_poc/common/json_variable_widgets/json_bottom_text_container.dart';
-import 'package:oem_app_poc/common/json_variable_widgets/json_common_text_field.dart';
-import 'package:oem_app_poc/common/json_variable_widgets/json_custom_button.dart';
-import 'package:oem_app_poc/common/json_variable_widgets/json_logo_container.dart';
-import 'package:oem_app_poc/common/json_variable_widgets/json_title_container.dart';
+import 'package:oem_app_poc/common/hybrid_variable_widgets/hybrid_bottom_text_container.dart';
+import 'package:oem_app_poc/common/hybrid_variable_widgets/hybrid_common_text_field.dart';
+import 'package:oem_app_poc/common/hybrid_variable_widgets/hybrid_custom_button.dart';
+import 'package:oem_app_poc/common/hybrid_variable_widgets/hybrid_logo_container.dart';
+import 'package:oem_app_poc/common/hybrid_variable_widgets/hybrid_title_container.dart';
 import 'package:oem_app_poc/common/variable_list/alignment_variable.dart';
 import 'package:oem_app_poc/models/asiri_config_model.dart';
 
@@ -36,13 +36,13 @@ class HybridScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    JsonLogoContainer(
+                    HybridLogoContainer(
                       url: configVariables?.logoUrl,
                       marginRight: configVariables?.logoMarginRight,
                       height: configVariables?.logoHeight,
                       width: configVariables?.logoWidth,
                     ),
-                    JsonTitleContainer(
+                    HybridTitleContainer(
                       title: configVariables?.title,
                       fontSize: configVariables?.titleFontSize,
                       textColor:
@@ -62,13 +62,13 @@ class HybridScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      JsonCommonTextField(
+                      HybridCommonTextField(
                         labelText: configVariables?.labelText1,
                         fontSize: configVariables?.lableTextFontSize,
                         textColor:
                             HexColor.fromHex(configVariables?.lableTextColor),
                       ),
-                      JsonCommonTextField(
+                      HybridCommonTextField(
                         labelText: configVariables?.labelText2,
                         fontSize: configVariables?.lableTextFontSize,
                         textColor:
@@ -84,7 +84,7 @@ class HybridScreen extends StatelessWidget {
                     bottom: configVariables?.buttonMarginBottom ??
                         AsiriAlignmentVariableList().buttonMarginBottom,
                   ),
-                  child: JsonCustomButton(
+                  child: HybridCustomButton(
                     text: configVariables?.buttonText,
                     buttonBackroundColor:
                         HexColor.fromHex(configVariables?.buttonBackroundColor),
@@ -93,7 +93,7 @@ class HybridScreen extends StatelessWidget {
                         HexColor.fromHex(configVariables?.buttonTextColor),
                   ),
                 ),
-                JsonBottomTextContainer(
+                HybridBottomTextContainer(
                   height: configVariables?.bottomTextContainerHeight,
                   bottomText: configVariables?.bottomText,
                   fontSize: configVariables?.bottomTextFontSize,

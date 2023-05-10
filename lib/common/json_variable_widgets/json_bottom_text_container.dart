@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JsonBottomTextContainer extends StatelessWidget {
   final String? bottomText;
@@ -22,10 +23,10 @@ class JsonBottomTextContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? 200,
-      width: width ?? double.infinity,
+      height: ScreenUtil().setHeight(height ?? 200),
+      width: ScreenUtil().setWidth(width ?? double.infinity),
       margin: EdgeInsets.only(
-        bottom: marginBottom ?? 20.0,
+        bottom: ScreenUtil().setWidth(marginBottom ?? 20.0),
       ),
       child: Center(
         child: Text(
@@ -33,7 +34,7 @@ class JsonBottomTextContainer extends StatelessWidget {
           style: TextStyle(
             color: textColor ?? Colors.black,
             fontWeight: fontWeight ?? FontWeight.w400,
-            fontSize: fontSize ?? 18,
+            fontSize: ScreenUtil().setSp(fontSize ?? 18),
             overflow: TextOverflow.ellipsis,
           ),
         ),

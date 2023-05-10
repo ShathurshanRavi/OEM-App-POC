@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LogoContainer extends StatelessWidget {
   final String? url;
@@ -22,11 +23,11 @@ class LogoContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? 90,
-      width: width ?? 150,
+      height: ScreenUtil().setHeight(height ?? 90),
+      width: ScreenUtil().setWidth(width ?? 150),
       margin: margin ??
-          const EdgeInsets.only(
-            right: 20.0,
+          EdgeInsets.only(
+            right: ScreenUtil().setWidth(20),
           ),
       child: Image.network(
         url ?? "",

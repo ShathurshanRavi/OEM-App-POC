@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oem_app_poc/common/variable_list/color_variable.dart';
 import 'package:oem_app_poc/common/variable_list/size_variable.dart';
 
@@ -18,14 +19,14 @@ class HybridCommonTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText: true,
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
         labelText: labelText,
         labelStyle: TextStyle(
           color: textColor ?? AsiriColorVariableList().lableTextColor,
           fontWeight: fontWeight ?? FontWeight.w300,
-          fontSize: fontSize ?? AsiriSizeVariableList().lableTextFontSize,
+          fontSize: ScreenUtil()
+              .setSp(fontSize ?? AsiriSizeVariableList().lableTextFontSize),
           overflow: TextOverflow.ellipsis,
         ),
       ),
