@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oem_app_poc/common/variable_list/alignment_variable.dart';
 import 'package:oem_app_poc/common/variable_list/color_variable.dart';
 import 'package:oem_app_poc/common/variable_list/size_variable.dart';
@@ -42,7 +43,8 @@ class LocalVariableListScreen extends StatelessWidget {
                 ),
                 Container(
                   margin: AsiriAlignmentVariableList().lableContainerMargin,
-                  height: AsiriAlignmentVariableList().lableContainerHeight,
+                  height: ScreenUtil().setHeight(
+                      AsiriAlignmentVariableList().lableContainerHeight),
                   width: double.infinity,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -61,9 +63,8 @@ class LocalVariableListScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height:
-                      AsiriAlignmentVariableList().buttonContainerHeight,
-                  width: double.infinity,
+                  height: ScreenUtil().setHeight(AsiriAlignmentVariableList().buttonContainerHeight),
+                  width: ScreenUtil().setWidth(double.infinity),
                   margin: AsiriAlignmentVariableList().lableContainerMargin,
                   child: CustomButton(
                     text: AsiriTextVaribleList().buttonText,

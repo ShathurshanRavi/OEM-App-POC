@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oem_app_poc/common/color_convert.dart';
 import 'package:oem_app_poc/common/json_variable_widgets/json_bottom_text_container.dart';
 import 'package:oem_app_poc/common/json_variable_widgets/json_common_text_field.dart';
@@ -23,10 +23,13 @@ class JsonScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.only(
-              left: configVariables?.pagePaddingLeft ?? 20.0,
-              right: configVariables?.pagePaddingRight ?? 20.0,
-              top: configVariables?.pagePaddingTop ?? 8.0,
-              bottom: configVariables?.pagePaddingBottom ?? 8.0,
+              left:
+                  ScreenUtil().setWidth(configVariables?.pagePaddingLeft ?? 20),
+              right: ScreenUtil()
+                  .setWidth(configVariables?.pagePaddingRight ?? 20),
+              top: ScreenUtil().setHeight(configVariables?.pagePaddingTop ?? 8),
+              bottom: ScreenUtil()
+                  .setHeight(configVariables?.pagePaddingBottom ?? 8),
             ),
             child: Column(
               children: [
@@ -50,7 +53,8 @@ class JsonScreen extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.only(
-                    top: configVariables?.lableContainerMarginTop ?? 20.0,
+                    top: ScreenUtil().setHeight(
+                        configVariables?.lableContainerMarginTop ?? 20.0),
                   ),
                   height: configVariables?.lableContainerHeight,
                   width: double.infinity,
@@ -76,7 +80,8 @@ class JsonScreen extends StatelessWidget {
                   height: configVariables?.buttonContainerHeight,
                   width: double.infinity,
                   margin: EdgeInsets.only(
-                    bottom: configVariables?.buttonMarginBottom ?? 20.0,
+                    bottom: ScreenUtil()
+                        .setHeight(configVariables?.buttonMarginBottom ?? 20.0),
                   ),
                   child: JsonCustomButton(
                     text: configVariables?.buttonText,

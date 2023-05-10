@@ -1,7 +1,7 @@
-
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JsonLogoContainer extends StatelessWidget {
   final String? url;
@@ -23,10 +23,10 @@ class JsonLogoContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? 90,
-      width: width ?? 150,
+      height: ScreenUtil().setHeight(height ?? 90),
+      width: ScreenUtil().setWidth(width ?? 150),
       margin: EdgeInsets.only(
-        right: marginRight ?? 20.0,
+        right: ScreenUtil().setWidth(marginRight ?? 20.0),
       ),
       child: Image.network(
         url ??

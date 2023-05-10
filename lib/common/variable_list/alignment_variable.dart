@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AsiriAlignmentVariableList {
-  final EdgeInsets pagePadding = const EdgeInsets.only(
-    left: 20.0,
-    top: 8.0,
-    right: 20.0,
-    bottom: 8.0,
+  final EdgeInsets pagePadding = EdgeInsets.only(
+    left: 20.0.w,
+    top: 8.0.h,
+    right: 20.0.w,
+    bottom: 8.0.h,
   );
-  final EdgeInsets logoMargin = const EdgeInsets.only(
-    right: 20.0,
+  final EdgeInsets logoMargin = EdgeInsets.only(
+    right: 20.0.w,
   );
 
-  final EdgeInsets lableContainerMargin = const EdgeInsets.only(
-    top: 50.0,
+  final EdgeInsets lableContainerMargin = EdgeInsets.only(
+    top: 50.0.h,
   );
-  final EdgeInsets buttonMargin = const EdgeInsets.only(
-    bottom: 20.0,
+  final EdgeInsets buttonMargin = EdgeInsets.only(
+    bottom: 20.0.h,
   );
-  final EdgeInsets bottomTextContainerMargin = const EdgeInsets.only(
-    bottom: 20.0,
+  final EdgeInsets bottomTextContainerMargin = EdgeInsets.only(
+    bottom: 20.0.h,
   );
   final double logoHeight = 90;
   final double logoWidth = 150;

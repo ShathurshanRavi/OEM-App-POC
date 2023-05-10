@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oem_app_poc/common/variable_list/alignment_variable.dart';
 import 'package:oem_app_poc/common/variable_list/size_variable.dart';
 import 'package:oem_app_poc/common/variable_list/text_variable.dart';
@@ -25,11 +26,12 @@ class HybridBottomTextContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? AsiriAlignmentVariableList().bottomTextContainerHeight,
-      width: width ?? double.infinity,
+      height: ScreenUtil().setHeight(
+          height ?? AsiriAlignmentVariableList().bottomTextContainerHeight),
+      width: ScreenUtil().setWidth(width ?? double.infinity),
       margin: EdgeInsets.only(
-        bottom: marginBottom ??
-            AsiriAlignmentVariableList().bottomTextContainerMarginBottom,
+        bottom: ScreenUtil().setWidth(marginBottom ??
+            AsiriAlignmentVariableList().bottomTextContainerMarginBottom),
       ),
       child: Center(
         child: Text(
@@ -37,7 +39,8 @@ class HybridBottomTextContainer extends StatelessWidget {
           style: TextStyle(
             color: textColor ?? Colors.black,
             fontWeight: fontWeight ?? FontWeight.w400,
-            fontSize: fontSize ?? AsiriSizeVariableList().bottomTextFontSize,
+            fontSize: ScreenUtil()
+                .setSp(fontSize ?? AsiriSizeVariableList().bottomTextFontSize),
             overflow: TextOverflow.ellipsis,
           ),
         ),

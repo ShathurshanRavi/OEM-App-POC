@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oem_app_poc/common/variable_list/alignment_variable.dart';
 import 'package:oem_app_poc/common/variable_list/text_variable.dart';
 
@@ -24,10 +25,13 @@ class HybridLogoContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? AsiriAlignmentVariableList().logoHeight,
-      width: width ?? AsiriAlignmentVariableList().logoWidth,
+      height: ScreenUtil()
+          .setHeight(height ?? AsiriAlignmentVariableList().logoHeight),
+      width: ScreenUtil()
+          .setWidth(width ?? AsiriAlignmentVariableList().logoWidth),
       margin: EdgeInsets.only(
-        right: marginRight ?? AsiriAlignmentVariableList().logoMarginRight,
+        right: ScreenUtil().setWidth(
+            marginRight ?? AsiriAlignmentVariableList().logoMarginRight),
       ),
       child: Image.network(
         url ?? AsiriTextVaribleList().logoUrl,

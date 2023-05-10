@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class JsonTitleContainer extends StatelessWidget {
   final String? title;
@@ -20,16 +21,16 @@ class JsonTitleContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height ?? 100,
-      width: width ?? 150,
+      height: ScreenUtil().setHeight(height ?? 100),
+      width: ScreenUtil().setWidth(width ?? 150),
       child: Center(
         child: Text(
           title ?? "Title",
           style: TextStyle(
             color: textColor ?? Colors.black,
             fontWeight: fontWeight ?? FontWeight.w700,
-            fontSize: fontSize ?? 28,
-            overflow: TextOverflow.ellipsis,
+            fontSize: ScreenUtil().setSp(fontSize ?? 28),
+            overflow: TextOverflow.visible,
           ),
         ),
       ),

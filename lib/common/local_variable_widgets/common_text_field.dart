@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CommonTextField extends StatelessWidget {
   final String? labelText;
@@ -16,16 +17,15 @@ class CommonTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText: true,
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
         labelText: labelText,
         labelStyle: TextStyle(
-            color: textColor ?? Colors.green,
-            fontWeight: fontWeight ?? FontWeight.w300,
-            fontSize: fontSize ?? 14,
-            overflow: TextOverflow.ellipsis,
-          ),
+          color: textColor ?? Colors.green,
+          fontWeight: fontWeight ?? FontWeight.w300,
+          fontSize: ScreenUtil().setSp(fontSize ?? 14),
+          overflow: TextOverflow.ellipsis,
+        ),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oem_app_poc/common/variable_list/alignment_variable.dart';
 import 'package:oem_app_poc/common/variable_list/color_variable.dart';
 import 'package:oem_app_poc/common/variable_list/size_variable.dart';
@@ -24,16 +25,19 @@ class HybridTitleContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height ?? AsiriAlignmentVariableList().titleContainerHeight,
-      width: width ?? AsiriAlignmentVariableList().titleContainerWidth,
+      height: ScreenUtil().setHeight(
+          height ?? AsiriAlignmentVariableList().titleContainerHeight),
+      width: ScreenUtil()
+          .setWidth(width ?? AsiriAlignmentVariableList().titleContainerWidth),
       child: Center(
         child: Text(
           title ?? AsiriTextVaribleList().title,
           style: TextStyle(
             color: textColor ?? AsiriColorVariableList().titleTextColor,
             fontWeight: fontWeight ?? FontWeight.w700,
-            fontSize: fontSize ?? AsiriSizeVariableList().titleFontSize,
-            overflow: TextOverflow.ellipsis,
+            fontSize: ScreenUtil()
+                .setSp(fontSize ?? AsiriSizeVariableList().titleFontSize),
+            overflow: TextOverflow.visible,
           ),
         ),
       ),

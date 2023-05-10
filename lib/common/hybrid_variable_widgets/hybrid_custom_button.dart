@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oem_app_poc/common/variable_list/color_variable.dart';
 import 'package:oem_app_poc/common/variable_list/size_variable.dart';
 import 'package:oem_app_poc/common/variable_list/text_variable.dart';
@@ -29,7 +30,8 @@ class _HybridCustomButtonState extends State<HybridCustomButton> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: widget.buttonBackroundColor ?? AsiriColorVariableList().buttonBackroundColor,
+        backgroundColor: widget.buttonBackroundColor ??
+            AsiriColorVariableList().buttonBackroundColor,
       ),
       onPressed: widget.onClick ?? () {},
       child: Text(
@@ -37,7 +39,8 @@ class _HybridCustomButtonState extends State<HybridCustomButton> {
         style: TextStyle(
           color: widget.textColor ?? AsiriColorVariableList().buttonTextColor,
           fontWeight: widget.fontWeight ?? FontWeight.w400,
-          fontSize: widget.fontSize ?? AsiriSizeVariableList().buttonTextFontSize,
+          fontSize: ScreenUtil().setSp(
+              widget.fontSize ?? AsiriSizeVariableList().buttonTextFontSize),
           overflow: TextOverflow.ellipsis,
         ),
       ),
