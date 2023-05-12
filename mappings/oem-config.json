@@ -1,0 +1,53 @@
+{
+    "mappings": [
+      {
+        "request": {
+          "method": "GET",
+          "url": "/api/v2/oem-configs"
+        },
+        "response": {
+          "status": 200,
+          "jsonBody": {
+            "title": "Asiri Hospital",
+            "logoUrl":"https://www.asirihealth.com/templates/assets/images/home-new/asiri-helath-logo.png",
+            "labelText1": "Name",
+            "labelText2": "Age",
+            "buttonText": "Submit",
+            "bottomText": "Copyright Statement",
+            "titleFontSize": 30.0,
+            "lableTextFontSize": 15.0,
+            "buttonTextFontSize": 20.0,
+            "bottomTextFontSize": 18.0,
+            "logoHeight": 90.0,
+            "logoWidth": 150.0,
+            "titleContainerHeight": 100.0,
+            "titleContainerWidth0": 150.0,
+            "lableContainerHeight": 200.0,
+            "buttonContainerHeight": 80.0,
+            "bottomTextContainerHeight": 80.0,
+            "pagePaddingLeft": 20.0,
+            "pagePaddingRight": 20.0,
+            "pagePaddingTop": 8.0,
+            "pagePaddingBottom": 8.0,
+            "logoMarginRight": 20.0,
+            "lableContainerMarginTop": 50.0,
+            "buttonMarginBottom": 20.0,
+            "bottomTextContainerMarginBottom": 20.0,
+            "titleTextColor":"#00FF00",
+            "lableTextColor": "#448AFF",
+            "buttonTextColor": "#FFFFFF",
+            "buttonBackroundColor": "#90A4AE",
+            "bottomTextFontColor": "#000000",
+            "pageBackroundColor": "#FFFFFF" 
+          },
+          "headers": {
+            "Content-Type" : "application/json",
+            "Version" : "2.0",
+            "WWW-Authenticate" : "Basic realm='User Visible Realm', charset='UTF-8'",
+            "Location": "http://127.0.0.1"
+          }
+        }
+      }
+    ]
+  }
+  

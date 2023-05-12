@@ -18,7 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## To deploy the mock server
 
-1. Open the kokokara-simulator folder inside the project folder
+1. Open the WireMock directory
 2. Run the CMD
 3. Add the bellow comment and run the CMD 
    java -jar wiremock-standalone-2.27.2.jar --port=9035 --verbose
@@ -27,9 +27,8 @@ samples, guidance on mobile development, and a full API reference.
 
 ## To update the mock JSON file
 
-1. Open the kokokara-simulator folder inside the project folder
-2. Open the mappings folder there is a mock JSON file is there 
-3. Open the file with any of the editor
-4. Make the change on the mock JSN file and save the file
-5. Stop the mock server mention above and rerun the command
+1. Open the mappings folder there is a mock JSON file is there 
+2. Open the file with any of the editor
+3. Make the change on the mock JSN file and save the file
+4. Stop the mock server mention above and rerun the command
 
